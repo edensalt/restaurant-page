@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "NeonFont";
+  src: url("./fonts/Neonderthaw-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.flicker {
+  animation-name: flicker;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+body {
+  background-color: black;
+}
+
+#content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button.link {
+  font-size: 1rem;
+  color: white;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  padding: initial;
+  margin: initial;
+  outline: none;
+}
+
+.homepage {
+  color: blue;
+}
+
+#navbar {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  position: sticky;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.752);
+}
+
+#navbar > * {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+
+#navbar > *:hover {
+  cursor: pointer;
+}
+
+h1 {
+  color: rgb(255, 1, 213);
+  font-size: 4rem;
+  font-family: "NeonFont";
+}
+
+#page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2, h3, h4, p {
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2 {
+    padding-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color:rgb(255, 1, 213)
+}
+
+#home {
+  display: flex;
+  justify-content: center;
+}
+
+#home > img,
+#hours > img {
+  width: 350px;
+}
+
+ul, li {
+    all: unset;
+}
+
+.menu-item {
+  height: 150px;
+}
+
+
+.day {
+    padding-bottom: 2rem;
+}
+
+#hours, #menu {
+  display: flex;
+}
+
+#menu > div {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 300px;
+}
+
+#map {
+  height: 400px;
+  width: 600px;
+}
+
+#footer {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.752);
+}
+
+#github-logo {
+  height: 30px;
+  margin-right: 15px;
+}
