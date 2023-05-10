@@ -1,5 +1,5 @@
 import "../style.css";
-import mobileMenu from "./mobile_menu";
+import { toMobileNav } from "../navigation/to_mobile_nav";
 
 const NavBar = function () {
   const parent = document.querySelector("#content");
@@ -44,26 +44,6 @@ const NavBar = function () {
   svg.setAttribute("fill", "white");
   svg.innerHTML =
     '<path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>';
-  svg.addEventListener("click", () => {
-    if (svg.classList.contains("closed")) {
-      mobileMenu();
-      svg.innerHTML =
-        '<path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>';
-      svg.classList.remove("closed");
-      svg.classList.add("open");
-    } else {
-      const parent = document.querySelector("#mobile-menu-div");
-      while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-      }
-      svg.innerHTML =
-        '<path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>';
-      svg.classList.remove("open");
-      svg.classList.add("closed");
-      mobileMenuDiv.appendChild(svg);
-
-    }
-  });
 
   const pageContent = document.createElement("div");
   pageContent.setAttribute("id", "page-content");
@@ -77,6 +57,8 @@ const NavBar = function () {
   navBar.appendChild(mobileMenuDiv);
   mobileMenuDiv.appendChild(svg);
   parent.appendChild(pageContent);
+  toMobileNav();
+
 
   return navBar;
 };
