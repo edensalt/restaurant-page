@@ -143,6 +143,15 @@ ul, li {
   width: 300px;
 }
 
+#mobile-menu-popup {
+  background-color: green;
+}
+
+#mobile-menu-popup > button {
+  display: flex;
+  flex-direction: column;
+}
+
 #footer {
   display: flex;
   position: fixed;

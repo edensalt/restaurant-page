@@ -1,4 +1,5 @@
 import "../style.css";
+import mobileMenu from "./mobile_menu";
 
 const NavBar = function () {
   const parent = document.querySelector("#content");
@@ -31,6 +32,9 @@ const NavBar = function () {
   contact.innerHTML = "Contact";
   contact.classList.add("link");
 
+  const mobileMenuDiv = document.createElement("div");
+  mobileMenuDiv.setAttribute("id", "mobile-menu-div");
+
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("height", "36");
   svg.setAttribute("viewBox", "0 96 960 960");
@@ -38,21 +42,31 @@ const NavBar = function () {
   svg.setAttribute("id", "menu-svg");
   svg.classList.add("closed");
   svg.setAttribute("fill", "white");
-  svg.innerHTML = '<path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>';    
-  svg.addEventListener('click', () => {
+  svg.innerHTML =
+    '<path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>';
+  svg.addEventListener("click", () => {
     if (svg.classList.contains("closed")) {
-    svg.innerHTML = '<path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>';
-    svg.classList.remove("closed");
-    svg.classList.add("open");
+      mobileMenu();
+      svg.innerHTML =
+        '<path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>';
+      svg.classList.remove("closed");
+      svg.classList.add("open");
     } else {
-      svg.innerHTML = '<path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>';    
+      const parent = document.querySelector("#mobile-menu-div");
+      while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+      }
+      svg.innerHTML =
+        '<path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>';
       svg.classList.remove("open");
       svg.classList.add("closed");
-    }
-});
+      mobileMenuDiv.appendChild(svg);
 
-  const pageContent = document.createElement('div');
-  pageContent.setAttribute('id', "page-content");
+    }
+  });
+
+  const pageContent = document.createElement("div");
+  pageContent.setAttribute("id", "page-content");
 
   parent.appendChild(navBar);
   navBar.appendChild(menu);
@@ -60,7 +74,8 @@ const NavBar = function () {
   navBar.appendChild(logo);
   navBar.appendChild(hours);
   navBar.appendChild(contact);
-  navBar.appendChild(svg);
+  navBar.appendChild(mobileMenuDiv);
+  mobileMenuDiv.appendChild(svg);
   parent.appendChild(pageContent);
 
   return navBar;
