@@ -1,4 +1,4 @@
-import { toMenuMobile } from "../navigation";
+import { toAboutMobile, toContactMobile, toHoursMobile, toMenuMobile } from "../navigation";
 import "../style.css";
 
 const mobileNav = function () {
@@ -12,7 +12,6 @@ const mobileNav = function () {
   menu.innerHTML = "Menu";
   menu.classList.add("link");
   menu.addEventListener("click", function () {
-    console.log("to menu mobile!");
     toMenuMobile();
   });
 
@@ -20,15 +19,24 @@ const mobileNav = function () {
   about.setAttribute("id", "about-link-mobile");
   about.innerHTML = "About";
   about.classList.add("link");
+  about.addEventListener("click", function () {
+    toAboutMobile();
+  });
 
   const hours = document.createElement("button");
   hours.innerHTML = "Hours";
   hours.classList.add("link", "hours-link-mobile");
+  hours.addEventListener("click", function () {
+    toHoursMobile();
+  });
 
   const contact = document.createElement("button");
   contact.setAttribute("id", "contact-link-mobile");
   contact.innerHTML = "Contact";
   contact.classList.add("link");
+  contact.addEventListener("click", function () {
+    toContactMobile();
+  });
 
   parent.appendChild(menuDiv);
   menuDiv.appendChild(menu);

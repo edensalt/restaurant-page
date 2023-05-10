@@ -1,5 +1,4 @@
 import mobileNav from "../components/mobile_nav";
-import { toMenuMobile } from "./to_menu";
 
 const toMobileNav = function () {
   const menuBtn = document.querySelector("#menu-svg");
