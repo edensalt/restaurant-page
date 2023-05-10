@@ -177,6 +177,8 @@ li {
   #page-content {
     max-width: 100%;
     margin-bottom: 35px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   button.link {
@@ -187,9 +189,11 @@ li {
     font-size: 3rem;
   }
 
-  #menu {
+  #menu,
+  #hours {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   #menu > div {
@@ -198,12 +202,9 @@ li {
     width: 100%;
   }
 
-  #home > img {
-    width: 80%;
-  }
-
+  #home,
   #hours > img {
-    width: 50%;
+    width: 80%;
   }
 
   #menu-svg {
@@ -215,7 +216,7 @@ li {
     top: 45px;
     right: 0px;
   }
-  
+
   #mobile-menu-popup {
     position: fixed;
     top: 20%;
@@ -230,7 +231,7 @@ li {
     box-shadow: 4px 4px 8px rgba(95, 95, 95, 0.427);
     z-index: 10;
   }
-  
+
   #mobile-menu-popup > button {
     color: black;
     display: block;
@@ -238,10 +239,9 @@ li {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  
+
   #mobile-menu-popup > button:hover {
     color: white;
     cursor: pointer;
   }
-  
 }
