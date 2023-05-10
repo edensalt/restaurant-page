@@ -4,14 +4,10 @@ Restaurant page for the <a href="https://www.theodinproject.com/lessons/node-pat
 
 ## Skills demonstrated
 
-- JS ES6 Modules
-- JS imports and exports
-- Webpack and npm
+- JS ES6 Modules, imports and exports
+- Webpack, JSON and NPM
+- Display size responsive design with mobile navigation menu
 - CSS keyframes
-
-## Wishlist
-
-- Make mobile friendly
 
 ### Sources
 
