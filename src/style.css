@@ -58,6 +58,7 @@ button.link {
   position: sticky;
   top: 0px;
   background-color: rgba(0, 0, 0, 0.752);
+  width: 100%;
 }
 
 #navbar > * {
@@ -84,6 +85,7 @@ h1 {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 35px;
 }
 
 h2, h3, h4, p {
