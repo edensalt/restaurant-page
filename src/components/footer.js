@@ -16,7 +16,7 @@ const Footer = function () {
 
   const username = document.createElement("p");
   username.setAttribute("id", "username");
-  username.innerHTML = `<a href="https://github.com/edensalt">@edensalt</a>`;
+  username.innerHTML = `<a href="https://github.com/edensalt/restaurant-page">@edensalt</a>`;
   footer.appendChild(username);
 
   return footer;
