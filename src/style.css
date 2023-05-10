@@ -71,6 +71,10 @@ button.link {
   cursor: pointer;
 }
 
+#menu-svg {
+  display: none;
+}
+
 h1 {
   color: rgb(255, 1, 213);
   font-size: 4rem;
@@ -139,11 +143,6 @@ ul, li {
   width: 300px;
 }
 
-#map {
-  height: 400px;
-  width: 600px;
-}
-
 #footer {
   display: flex;
   position: fixed;
@@ -160,4 +159,45 @@ ul, li {
 #github-logo {
   height: 30px;
   margin-right: 15px;
+}
+
+/* Media query for screens that are 600px or less */
+@media only screen and (max-width: 600px) {
+  
+  #page-content {
+    max-width: 100%;
+    margin-bottom: 35px;
+}
+  
+  button.link {
+    font-size: 14px;
+    color: blue;
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  #menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #menu > div {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+  }
+
+  #home > img,
+#hours > img {
+  width: 80%;
+}
+
+#menu-svg {
+  display: block;
+  position: fixed;
+  right: 0px;
+}
 }

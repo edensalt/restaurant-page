@@ -31,6 +31,26 @@ const NavBar = function () {
   contact.innerHTML = "Contact";
   contact.classList.add("link");
 
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("height", "36");
+  svg.setAttribute("viewBox", "0 96 960 960");
+  svg.setAttribute("width", "36");
+  svg.setAttribute("id", "menu-svg");
+  svg.classList.add("closed");
+  svg.setAttribute("fill", "white");
+  svg.innerHTML = '<path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>';    
+  svg.addEventListener('click', () => {
+    if (svg.classList.contains("closed")) {
+    svg.innerHTML = '<path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>';
+    svg.classList.remove("closed");
+    svg.classList.add("open");
+    } else {
+      svg.innerHTML = '<path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>';    
+      svg.classList.remove("open");
+      svg.classList.add("closed");
+    }
+});
+
   const pageContent = document.createElement('div');
   pageContent.setAttribute('id', "page-content");
 
@@ -40,6 +60,7 @@ const NavBar = function () {
   navBar.appendChild(logo);
   navBar.appendChild(hours);
   navBar.appendChild(contact);
+  navBar.appendChild(svg);
   parent.appendChild(pageContent);
 
   return navBar;
