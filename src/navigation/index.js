@@ -1,4 +1,4 @@
-export { default as toHome } from './to_home';
+export { toHome, toHomeMobile } from './to_home';
 export { toMenu, toMenuMobile } from './to_menu';
 export { toAbout, toAboutMobile } from './to_about';
 export { toHours, toHoursMobile } from './to_hours';

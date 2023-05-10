@@ -59,7 +59,6 @@ const NavBar = function () {
   parent.appendChild(pageContent);
   toMobileNav();
 
-
   return navBar;
 };
 
