@@ -2,7 +2,7 @@ import "../style.css";
 import gitHubLogo from '../images/github-mark-white.png'
 
 const Footer = function () {
-  const parent = document.querySelector("#content");
+  const parent = document.querySelector("#parent");
 
   const footer = document.createElement("div");
   footer.setAttribute("id", "footer");

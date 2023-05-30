@@ -2,7 +2,7 @@ import "../style.css";
 import { toMobileNav } from "../navigation/to_mobile_nav";
 
 const NavBar = function () {
-  const parent = document.querySelector("#content");
+  const parent = document.querySelector("#parent");
 
   const navBar = document.createElement("div");
   navBar.setAttribute("id", "navbar");

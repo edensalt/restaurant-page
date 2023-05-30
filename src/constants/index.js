@@ -1,3 +1,9 @@
+import image1 from '../images/slider-1.jpg';
+import image2 from '../images/slider-2.jpg';
+import image3 from '../images/slider-3.jpg';
+import image4 from '../images/slider-4.jpg';
+
+
 export const aboutUsText = `Welcome to Neon Cafe, where creativity and community come together over a cup of expertly-crafted coffee and homemade pastries.
 <br />
 <br />
@@ -98,4 +104,11 @@ export const hours = [
   { dayOfWeek: "Monday - Thursday", hours: "6:00am - 10:00pm" },
   { dayOfWeek: "Friday - Saturday", hours: "7:00am - 12:00pm" },
   { dayOfWeek: "Sunday", hours: "7:00am - 10:00pm" },
+];
+
+export const imagePaths = [
+  {src: image1, alt: 'man holding a coffee cup', first: 'data-active'},
+  {src: image2, alt: 'cappuccino in front of a neon E sign'},
+  {src: image3, alt: 'woman drinking coffee in front of a neon sign'},
+  {src: image4, alt: 'espresso in a dimly lit room'},
 ];

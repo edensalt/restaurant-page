@@ -7,8 +7,8 @@ Restaurant page for the <a href="https://www.theodinproject.com/lessons/node-pat
 - JS ES6 Modules, imports and exports
 - Webpack, JSON and NPM
 - Dynamic user interface interactions, built from scratch, including:
-- - Display size responsive design with mobile navigation menu
-- - Rotating image carousel
+  - Display size responsive design with mobile navigation menu
+  - Rotating image carousel
 
 ### Sources
 

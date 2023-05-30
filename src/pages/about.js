@@ -1,7 +1,6 @@
 import { aboutUsText } from "../constants";
 
 const AboutPage = function () {
-  
   const content = document.querySelector("#page-content");
 
   while (content.firstChild) {
@@ -19,6 +18,11 @@ const AboutPage = function () {
   const para = document.createElement("p");
   para.innerHTML = aboutUsText;
   container.appendChild(para);
+
+  const images = document.createElement("section");
+  images.setAttribute("id", "holder");
+  images.setAttribute("aria-label", "Photos of the coffee shop")
+  container.appendChild(images);
 
   return container;
 };
