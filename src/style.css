@@ -309,7 +309,7 @@ li {
 }
 
 .carousel-circle[data-active] {
-  animation: grow-shrink 3000ms ease-in-out 0ms infinite forwards;
+  animation: grow-shrink 3000ms ease-in-out 0ms forwards;
 }
 
 /* Media query for screens that are 600px or less */

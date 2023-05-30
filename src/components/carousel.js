@@ -28,8 +28,8 @@ const Carousel = function () {
   imagePaths.forEach((img) => {
     const li = document.createElement("li");
     if (img.first !== undefined) {
-        li.setAttribute(img.first, "");
-      }
+      li.setAttribute(img.first, "");
+    }
     li.classList.add("slide");
     const image = document.createElement("img");
     image.setAttribute("src", img.src);
@@ -67,54 +67,65 @@ const Carousel = function () {
 
   // Change slide on timing
 
- function changeSlides() {
-
+  function changeSlides() {
     const slides = document.querySelector("[data-slides]");
     const activeSlide = slides.querySelector("[data-active]");
 
-      let newIndex = [...slides.children].indexOf(activeSlide) + 1;
-      if (newIndex < 0) {
-        newIndex = slides.children.length - 1;
-      } if (newIndex >= slides.children.length) {
-        newIndex = 0
-      }
+    let newIndex = [...slides.children].indexOf(activeSlide) + 1;
+    if (newIndex < 0) {
+      newIndex = slides.children.length - 1;
+    }
+    if (newIndex >= slides.children.length) {
+      newIndex = 0;
+    }
 
-      slides.children[newIndex].dataset.active = true;
-      delete activeSlide.dataset.active;
+    slides.children[newIndex].dataset.active = true;
+    delete activeSlide.dataset.active;
 
-      const circles = document.querySelector(".carousel-nav");
-      const activeCircle = circles.querySelector("[data-active]");
+    const circles = document.querySelector(".carousel-nav");
+    const activeCircle = circles.querySelector("[data-active]");
 
-      circles.children[newIndex].dataset.active = true;
-      delete activeCircle.dataset.active;
+    circles.children[newIndex].dataset.active = true;
+    delete activeCircle.dataset.active;
   }
 
   changeSlides();
-  setInterval(changeSlides, 3000);
+  let intervalID;
 
+  function startInterval() {
+    clearInterval(intervalID);
+    intervalID = setInterval(changeSlides, 3000);
+  };
+
+  function stopInterval() {
+    clearInterval(intervalID);
+  };
+
+  startInterval()
 
   // Change slide with button
 
   const buttons = document.querySelectorAll("[data-carousel-button]");
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
+      stopInterval();
       const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-      const slides = button
-        .closest("[data-carousel]")
-        .querySelector("[data-slides]");
+      const slides = document.querySelector("[data-slides]");
 
       const activeSlide = slides.querySelector("[data-active]");
 
       let newIndex = [...slides.children].indexOf(activeSlide) + offset;
       if (newIndex < 0) {
         newIndex = slides.children.length - 1;
-      } if (newIndex >= slides.children.length) {
-        newIndex = 0
+      }
+      if (newIndex >= slides.children.length) {
+        newIndex = 0;
       }
 
       slides.children[newIndex].dataset.active = true;
       delete activeSlide.dataset.active;
-      console.log(slides.children[newIndex].dataset)
+      console.log(slides.children[newIndex].dataset);
+      setTimeout(startInterval, 3000)
     });
   });
 
