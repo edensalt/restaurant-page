@@ -46,29 +46,32 @@ const Carousel = function () {
 
   const circle1 = document.createElement("button");
   circle1.classList.add("carousel-circle");
-  circle1.setAttribute("slide", "1");
+  circle1.setAttribute("slide-btn", "0");
   circle1.setAttribute("data-active", "true");
   nav.appendChild(circle1);
 
   const circle2 = document.createElement("button");
   circle2.classList.add("carousel-circle");
-  circle2.setAttribute("slide", "1");
+  circle2.setAttribute("slide-btn", "1");
   nav.appendChild(circle2);
 
   const circle3 = document.createElement("button");
   circle3.classList.add("carousel-circle");
-  circle3.setAttribute("slide", "1");
+  circle3.setAttribute("slide-btn", "2");
   nav.appendChild(circle3);
 
   const circle4 = document.createElement("button");
   circle4.classList.add("carousel-circle");
-  circle4.setAttribute("slide", "1");
+  circle4.setAttribute("slide-btn", "3");
   nav.appendChild(circle4);
 
   // Change slide on timing
 
   function changeSlides() {
     const slides = document.querySelector("[data-slides]");
+    if (slides === null) {
+        return
+    }
     const activeSlide = slides.querySelector("[data-active]");
 
     let newIndex = [...slides.children].indexOf(activeSlide) + 1;
@@ -95,13 +98,13 @@ const Carousel = function () {
   function startInterval() {
     clearInterval(intervalID);
     intervalID = setInterval(changeSlides, 3000);
-  };
+  }
 
   function stopInterval() {
     clearInterval(intervalID);
-  };
+  }
 
-  startInterval()
+  startInterval();
 
   // Change slide with button
 
@@ -124,20 +127,41 @@ const Carousel = function () {
 
       slides.children[newIndex].dataset.active = true;
       delete activeSlide.dataset.active;
-      
+
       const circles = document.querySelector(".carousel-nav");
-    const activeCircle = circles.querySelector("[data-active]");
+      const activeCircle = circles.querySelector("[data-active]");
 
-    circles.children[newIndex].dataset.active = true;
-    delete activeCircle.dataset.active;
+      circles.children[newIndex].dataset.active = true;
+      delete activeCircle.dataset.active;
 
-      setTimeout(startInterval, 0)
+      setTimeout(startInterval, 0);
+
     });
+  });
 
-    // Change slides with circles
+  // Change slides with circles
 
-   
+  const circles = document.querySelectorAll("[slide-btn]");
+  circles.forEach((circle) => {
+    circle.addEventListener("click", () => {
+      stopInterval();
+      const index = circle.getAttribute("slide-btn");
+      console.log(index);
+      const slides = document.querySelector("[data-slides]");
 
+      const activeSlide = slides.querySelector("[data-active]");
+
+      slides.children[index].dataset.active = true;
+      delete activeSlide.dataset.active;
+
+      const circles = document.querySelector(".carousel-nav");
+      const activeCircle = circles.querySelector("[data-active]");
+
+      circles.children[index].dataset.active = true;
+      delete activeCircle.dataset.active;
+
+      setTimeout(startInterval, 0);
+    });
   });
 
   return carousel;

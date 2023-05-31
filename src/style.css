@@ -135,7 +135,7 @@ a:hover {
   align-items: center;
 }
 
-#home > img,
+#contact > img,
 #hours > img {
   width: 350px;
 }
@@ -205,6 +205,15 @@ li {
   }
 }
 
+@keyframes slide-out-reverse {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
 .slide {
   position: absolute;
   inset: 0;
@@ -224,6 +233,15 @@ li {
 @keyframes slide-in {
   from {
     transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-reverse {
+  from {
+    transform: translateX(-100%);
   }
   to {
     transform: translateX(0);
@@ -295,15 +313,14 @@ li {
     background-color: white;
   }
   10% {
-    background-color: rgb(255, 146, 237);
+    background-color: rgb(255, 132, 235);
   }
   50% {
     width: 30px;
     background-color: rgb(255, 1, 213);
   }
   90% {
-    background-color: rgb(255, 146, 237);
-
+    background-color: rgb(255, 132, 235);
   }
   100% {
     width: 20px;

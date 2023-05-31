@@ -19,11 +19,6 @@ const AboutPage = function () {
   para.innerHTML = aboutUsText;
   container.appendChild(para);
 
-  const images = document.createElement("section");
-  images.setAttribute("id", "holder");
-  images.setAttribute("aria-label", "Photos of the coffee shop")
-  container.appendChild(images);
-
   return container;
 };
 
