@@ -67,7 +67,19 @@ const Carousel = function () {
 
   // Change slide on timing
 
+  let intervalID;
+
+  function startInterval() {
+    clearInterval(intervalID);
+    intervalID = setInterval(changeSlides, 3000);
+  }
+
+  function stopInterval() {
+    clearInterval(intervalID);
+  }
+
   function changeSlides() {
+    stopInterval();
     const slides = document.querySelector("[data-slides]");
     if (slides === null) {
         return
@@ -90,21 +102,22 @@ const Carousel = function () {
 
     circles.children[newIndex].dataset.active = true;
     delete activeCircle.dataset.active;
+    setTimeout(startInterval, 0);
   }
 
   changeSlides();
-  let intervalID;
+  // let intervalID;
 
-  function startInterval() {
-    clearInterval(intervalID);
-    intervalID = setInterval(changeSlides, 3000);
-  }
+  // function startInterval() {
+  //   clearInterval(intervalID);
+  //   intervalID = setInterval(changeSlides, 3000);
+  // }
 
-  function stopInterval() {
-    clearInterval(intervalID);
-  }
+  // function stopInterval() {
+  //   clearInterval(intervalID);
+  // }
 
-  startInterval();
+  // startInterval();
 
   // Change slide with button
 
