@@ -210,7 +210,6 @@ li {
   inset: 0;
   opacity: 0;
   transition: 1000ms opacity ease-in-out;
-  /* transition-delay: 200ms; */
   animation: slide-out 1000ms;
 }
 
@@ -286,6 +285,10 @@ li {
   border-radius: 10px;
 }
 
+.carousel-circle:hover {
+  cursor: pointer;
+}
+
 @keyframes grow-shrink {
   0% {
     width: 20px;
@@ -295,7 +298,7 @@ li {
     background-color: rgb(255, 146, 237);
   }
   50% {
-    width: 60px;
+    width: 30px;
     background-color: rgb(255, 1, 213);
   }
   90% {
@@ -309,7 +312,7 @@ li {
 }
 
 .carousel-circle[data-active] {
-  animation: grow-shrink 3000ms ease-in-out 0ms forwards;
+  animation: grow-shrink 2800ms ease-in-out;
 }
 
 /* Media query for screens that are 600px or less */

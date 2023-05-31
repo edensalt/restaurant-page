@@ -124,9 +124,20 @@ const Carousel = function () {
 
       slides.children[newIndex].dataset.active = true;
       delete activeSlide.dataset.active;
-      console.log(slides.children[newIndex].dataset);
-      setTimeout(startInterval, 3000)
+      
+      const circles = document.querySelector(".carousel-nav");
+    const activeCircle = circles.querySelector("[data-active]");
+
+    circles.children[newIndex].dataset.active = true;
+    delete activeCircle.dataset.active;
+
+      setTimeout(startInterval, 0)
     });
+
+    // Change slides with circles
+
+   
+
   });
 
   return carousel;
