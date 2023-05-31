@@ -308,6 +308,7 @@ li {
 
 .carousel-circle:hover {
   cursor: pointer;
+  background-color: rgb(255, 132, 235);
 }
 
 @keyframes grow-shrink {
@@ -353,7 +354,7 @@ li {
   }
 
   #menu,
-  #hours, 
+  #hours,
   #contact {
     display: flex;
     flex-direction: column;
@@ -416,7 +417,7 @@ li {
   .carousel-button.prev {
     left: -2rem;
   }
-  
+
   .carousel-button.next {
     right: -2rem;
   }
