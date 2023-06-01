@@ -106,19 +106,7 @@ const Carousel = function () {
   }
 
   changeSlides();
-  // let intervalID;
-
-  // function startInterval() {
-  //   clearInterval(intervalID);
-  //   intervalID = setInterval(changeSlides, 3000);
-  // }
-
-  // function stopInterval() {
-  //   clearInterval(intervalID);
-  // }
-
-  // startInterval();
-
+  
   // Change slide with button
 
   const buttons = document.querySelectorAll("[data-carousel-button]");
